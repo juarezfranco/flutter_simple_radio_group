@@ -1,7 +1,7 @@
 name: simple_radio_group
-description: A new Flutter package project.
+description: A simple radio group
 version: 1.0.0
-homepage:
+homepage: https://github.com/juarezfranco/flutter_simple_radio_group
 
 environment:
   sdk: '>=2.18.4 <3.0.0'
