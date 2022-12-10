@@ -37,7 +37,8 @@ class SimpleRadioGroup<T> extends FormField<T> {
               options: options,
               labelBuilder: labelBuilder,
               onChanged: onChanged,
-              controller: (state as _SimpleRadioGroupState<T>).effectiveController,
+              controller:
+                  (state as _SimpleRadioGroupState<T>).effectiveController,
               direction: direction,
               hasError: state.hasError,
               errorText: state.errorText,
@@ -101,13 +102,16 @@ class _SimpleRadioGroupWidget<T> extends StatefulWidget {
   });
 
   @override
-  State<_SimpleRadioGroupWidget<T>> createState() => _SimpleRadioGroupWidgetState<T>();
+  State<_SimpleRadioGroupWidget<T>> createState() =>
+      _SimpleRadioGroupWidgetState<T>();
 }
 
-class _SimpleRadioGroupWidgetState<T> extends State<_SimpleRadioGroupWidget<T>> {
+class _SimpleRadioGroupWidgetState<T>
+    extends State<_SimpleRadioGroupWidget<T>> {
   void _onChanged(T? option) {
     setState(() {
-      widget.controller.value = widget.controller.value == option ? null : option;
+      widget.controller.value =
+          widget.controller.value == option ? null : option;
       widget.onChanged?.call(widget.controller.value);
     });
   }
@@ -133,7 +137,8 @@ class _SimpleRadioGroupWidgetState<T> extends State<_SimpleRadioGroupWidget<T>> 
                   ),
                   InkWell(
                     onTap: () => _onChanged(option),
-                    child: widget.labelBuilder?.call(option) ?? Text(option.toString()),
+                    child: widget.labelBuilder?.call(option) ??
+                        Text(option.toString()),
                   ),
                 ],
               ),
@@ -144,7 +149,8 @@ class _SimpleRadioGroupWidgetState<T> extends State<_SimpleRadioGroupWidget<T>> 
             alignment: Alignment.bottomLeft,
             child: Text(
               widget.errorText!,
-              style: TextStyle(color: Theme.of(context).colorScheme.error, fontSize: 12),
+              style: TextStyle(
+                  color: Theme.of(context).colorScheme.error, fontSize: 12),
             ),
           )
       ],
